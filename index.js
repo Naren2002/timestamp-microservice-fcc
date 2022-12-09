@@ -45,7 +45,7 @@ app.get("/api/:date", function(req, res){
     if (isNaN(Number(userInputDate))){
       inputDate = new Date(userInputDate);
     }else{
-      inputDate = new Date(Number(userInputDate)*1000);
+      inputDate = new Date(Number(userInputDate));
     }
   }
 
