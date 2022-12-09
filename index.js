@@ -18,6 +18,19 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+app.get("/api/whoami", function(req, res){
+  console.log(req.headers);
+
+  let lang = req.headers['accept-language'];
+  let userAgent = req.headers['user-agent'];
+  let address = req.ip;
+
+  res.json({
+    "ipaddress": address,
+    "language": lang,
+    "software": userAgent
+  })
+});
 
 app.get("/api/", function(req, res){
 
